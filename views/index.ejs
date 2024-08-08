@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+  </head>
+  <body>
+    <% if (user) { %>
+      <h1>Decor By OJ</h1>
+      <a href="/auth/log-out.ejs">Log Out</a>
+      <a href="/views/calender.ejs">Availability Calender</a>
+      <a href="/views/booking.ejs">Book With Us</a>
+    <% } else { %>
+      <h1>Decor By OJ</h1>
+      <a href="/auth/sign-up">Sign up</a>
+      <a href="/auth/sign-in">Sign in</a>
+      <a href="/views/calender.ejs">Availability Calender</a>
+      <a href="/views/booking.ejs">Book With Us</a>
+    <% } %>
+
+  </body>
+</html>

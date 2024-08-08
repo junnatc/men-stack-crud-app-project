@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book With Us!</title>
+  </head>
+  <body>
+    <h1>Booking Form</h1>
+    <form action="/the-form-submits-here" method="POST">
+        <div>
+            <label for ="username">User ID: </label>
+            <input type="text" id="username" name="username"/>
+        </div>
+      <div>
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name"/>
+      </div>
+      <div>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" />
+      </div>
+      <div>
+        <label for="phone number">Phone Number: </label>
+        <input type="phone number" id="phone-num" name="phone-num"/>
+      </div> 
+      <div>
+        <label for="event occasion">What is the occasion for your event? </label>
+        <input type="text" id="event-occasion" name="event-occasion"/>
+      </div>
+      <div>
+        <label for="service">What are the services you are requesting? </label>
+        <select name="service" id="type-of-service" multiple>
+          <option value="Backdrop Setup">Backdrop Setup</option>
+          <option value="Proposal Setup">Proposal Setup</option>
+          <option value="Luxury Picnic">Luxury Picnic Setup</option>
+          <option value="Overall Event Decorator">Overall Event Decorator (backdrop, dessert table, table decor setup, lighting etc.)</option>
+        </select>
+      </div>
+      <div>
+        <label for="number of people">Number of People: </label>
+        <input type="number" id="num-people" name="num-people"/>
+      </div>
+     
+      <div>
+        <label for="event-date">Date of Event: </label>
+        <input type="date" id="event-date" name="event-date"/>
+      </div>
+      <div>
+        <label for="event-time">Time duration of your event: </label>
+        <input type="time" id="start-time" name="start-time"/><span id="to"> to </span>
+        <input type="time" id="end-time" name="end-time"/>
+      </div>
+      <div>
+        <label for="location">What location will your event be taken place? (Type N/A if it hasn't been decided yet) </label>
+        <input type="text" id="location" name="location"/>
+      </div>
+      <div>
+        <label for="message">Anything else you'd like us to know? </label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
