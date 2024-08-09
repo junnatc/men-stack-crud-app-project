@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book With Us!</title>
-  </head>
-  <body>
-    <h1>Booking Form</h1>
-    <form action="/the-form-submits-here" method="POST">
+</head>
+<body>
+    <h1>Booking Inquiry Form</h1>
+    <form action="/booking" method="POST"> <!-- Ensure the action is correct -->
         <div>
-            <label for ="username">User ID: </label>
+            <label for="username">User ID: </label>
             <input type="text" id="username" name="username"/>
         </div>
-      <div>
-        <label for="name">Name: </label>
-        <input type="text" id="name" name="name"/>
-      </div>
-      <div>
-        <label for="email">Email: </label>
-        <input type="email" id="email" name="email" />
-      </div>
-      <div>
-        <label for="phone number">Phone Number: </label>
-        <input type="phone number" id="phone-num" name="phone-num"/>
-      </div> 
-      <div>
-        <label for="event occasion">What is the occasion for your event? </label>
-        <input type="text" id="event-occasion" name="event-occasion"/>
-      </div>
-      <div>
-        <label for="service">What are the services you are requesting? </label>
-        <select name="service" id="type-of-service" multiple>
-          <option value="Backdrop Setup">Backdrop Setup</option>
-          <option value="Proposal Setup">Proposal Setup</option>
-          <option value="Luxury Picnic">Luxury Picnic Setup</option>
-          <option value="Overall Event Decorator">Overall Event Decorator (backdrop, dessert table, table decor setup, lighting etc.)</option>
-        </select>
-      </div>
-      <div>
-        <label for="number of people">Number of People: </label>
-        <input type="number" id="num-people" name="num-people"/>
-      </div>
-     
-      <div>
-        <label for="event-date">Date of Event: </label>
-        <input type="date" id="event-date" name="event-date"/>
-      </div>
-      <div>
-        <label for="event-time">Time duration of your event: </label>
-        <input type="time" id="start-time" name="start-time"/><span id="to"> to </span>
-        <input type="time" id="end-time" name="end-time"/>
-      </div>
-      <div>
-        <label for="location">What location will your event be taken place? (Type N/A if it hasn't been decided yet) </label>
-        <input type="text" id="location" name="location"/>
-      </div>
-      <div>
-        <label for="message">Anything else you'd like us to know? </label>
-        <textarea id="message" name="message"></textarea>
-      </div>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
+        <div>
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name"/>
+        </div>
+        <div>
+            <label for="email">Email: </label>
+            <input type="email" id="email" name="email" />
+        </div>
+        <div>
+            <label for="phoneNum">Phone Number: </label>
+            <input type="text" id="phoneNum" name="phoneNum"/>
+        </div>
+        <div>
+            <label for="eventOccasion">What is the occasion for your event? </label>
+            <input type="text" id="eventOccasion" name="eventOccasion"/>
+        </div>
+        <div>
+            <label>What are the services you are requesting?</label><br/>
+            <input type="radio" id="backdrop-setup" name="services" value="Backdrop Setup">
+            <label for="backdrop-setup">Backdrop Setup</label><br/>
+            <input type="radio" id="proposal-setup" name="services" value="Proposal Setup">
+            <label for="proposal-setup">Proposal Setup</label><br/>
+            <input type="radio" id="luxury-picnic" name="services" value="Luxury Picnic Setup">
+            <label for="luxury-picnic">Luxury Picnic Setup</label><br/>
+            <input type="radio" id="event-decorator" name="services" value="Overall Event Decorator">
+            <label for="event-decorator">Overall Event Decorator (backdrop setup, table decor, dessert table setup, lighting, accents, etc.)</label><br/>
+        </div>
+        <div>
+            <label for="numPeople">Number of People: </label>
+            <input type="number" id="numPeople" name="numPeople"/>
+        </div>
+        <div>
+            <label for="eventDate">Date of Event: </label>
+            <input type="date" id="eventDate" name="eventDate"/>
+        </div>
+        <div>
+            <label for="startTime">Start Time:</label>
+            <input type="time" id="startTime" name="startTime"/>
+            <label for="endTime"> End Time:</label>
+            <input type="time" id="endTime" name="endTime"/>
+        </div>
+        <div>
+            <label for="location">What location will your event take place? (Type N/A if it hasn't been decided yet)</label>
+            <input type="text" id="location" name="location"/>
+        </div>
+        <div>
+            <label for="message">Anything else you'd like us to know?</label>
+            <textarea id="message" name="message"></textarea>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
     </form>
-  </body>
+</body>
 </html>
+
