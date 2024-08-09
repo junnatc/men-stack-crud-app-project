@@ -5,7 +5,7 @@ import methodOverride from 'method-override';
 import morgan from 'morgan';
 import session from 'express-session';
 import authController from './controllers/auth.js';
-import bookingRouter from './controllers/bookingController.js';
+import {bookingRouter , index} from './controllers/bookingController.js';
 
 dotenv.config();
 

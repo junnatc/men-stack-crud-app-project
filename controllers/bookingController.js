@@ -63,5 +63,11 @@ bookingRouter.post('/', async (req, res) => {
     res.status(500).send(`Error: ${error.message}`);
   }
 });
-
+// Get all bookings
+ const index = async (req, res) => {
+  const allBookings = await Booking.find();
+  res.render("mybookings", { bookings: allBookings });
+  
+}
+export{index}
 export default bookingRouter;
