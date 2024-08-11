@@ -4,28 +4,128 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book With Us!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        h1 {
+            background-color: #7eb3e7;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            font-size: 2.5em;
+            font-family: "Baskervville SC", serif;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            max-width: 800px;
+            margin: 40px auto; /* Increased margin for better spacing */
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        div {
+            margin-bottom: 20px; /* Increased margin for better spacing between form elements */
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="text"], input[type="email"], input[type="number"], input[type="date"], input[type="time"], textarea {
+            width: calc(100% - 22px);
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="time"]:focus, textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        button {
+            background-color: #3498db;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        button:active {
+            background-color: #1f65a6;
+            transform: translateY(0);
+        }
+        .back-button {
+            text-align: center;
+            margin: 40px 0; /* Added top and bottom margin for better spacing */
+        }
+        .back-button a {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+        .back-button a:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        .back-button a:active {
+            background-color: #1f65a6;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
     <h1>Booking Inquiry Form</h1>
-    <form action="/booking" method="POST"> <!-- Ensure the action is correct -->
+    <div class="back-button">
+        <a href="/">Back to Home</a>
+    </div>
+    <form action="/booking" method="POST"> 
         <div>
-            <label for="username">Username: </label>
+            <label for="username">Username:</label>
             <input type="text" id="username" name="username"/>
         </div>
         <div>
-            <label for="name">Name: </label>
+            <label for="name">Name:</label>
             <input type="text" id="name" name="name"/>
         </div>
         <div>
-            <label for="email">Email: </label>
+            <label for="email">Email:</label>
             <input type="email" id="email" name="email" />
         </div>
         <div>
-            <label for="phoneNum">Phone Number: </label>
+            <label for="phoneNum">Phone Number:</label>
             <input type="text" id="phoneNum" name="phoneNum"/>
         </div>
         <div>
-            <label for="eventOccasion">What is the occasion for your event? </label>
+            <label for="eventOccasion">What is the occasion for your event?</label>
             <input type="text" id="eventOccasion" name="eventOccasion"/>
         </div>
         <div>
@@ -40,11 +140,11 @@
             <label for="event-decorator">Overall Event Decorator (backdrop setup, table decor, dessert table setup, lighting, accents, etc.)</label><br/>
         </div>
         <div>
-            <label for="numPeople">Number of People: </label>
+            <label for="numPeople">Number of People:</label>
             <input type="number" id="numPeople" name="numPeople"/>
         </div>
         <div>
-            <label for="eventDate">Date of Event: </label>
+            <label for="eventDate">Date of Event:</label>
             <input type="date" id="eventDate" name="eventDate"/>
         </div>
         <div>
@@ -67,4 +167,6 @@
     </form>
 </body>
 </html>
+
+
 

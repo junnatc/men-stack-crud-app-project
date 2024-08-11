@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Calendar</title>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        #calendar {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .back-button {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+        }
+        .back-button a {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+        .back-button a:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        .back-button a:active {
+            background-color: #1f65a6;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                initialDate: '2024-08-07',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: async function(fetchInfo, successCallback, failureCallback) {
+                    try {
+                        const response = await fetch('/api/events'); // Fetch events from the server
+                        const events = await response.json();
+                        successCallback(events); // Provide events to FullCalendar
+                    } catch (error) {
+                        console.error('Error fetching events:', error);
+                        failureCallback(error); // Handle errors
+                    }
+                }
+            });
+
+            calendar.render();
+        });
+    </script>
+</head>
+<body>
+    <div class="back-button">
+        <a href="/">Back to Home</a>
+    </div>
+    <div id="calendar"></div>
+</body>
+</html>
+

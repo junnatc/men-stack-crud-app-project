@@ -13,7 +13,7 @@ authRouter.get('/sign-in', async (req, res) => {
   res.render('auth/sign-in.ejs')
 })
 
-authRouter.get('/sign-out', async (req, res) => {
+authRouter.get('/log-out', async (req, res) => {
   req.session.destroy()
   res.redirect('/')
 })

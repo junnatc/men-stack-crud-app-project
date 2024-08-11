@@ -1,25 +1,23 @@
-import dotenv from 'dotenv';
+// server.js
 import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 import methodOverride from 'method-override';
 import morgan from 'morgan';
 import session from 'express-session';
 import authController from './controllers/auth.js';
-import {bookingRouter , index} from './controllers/bookingController.js';
+import { bookingRouter, index } from './controllers/bookingController.js';
+import eventsRouter from './controllers/eventsController.js'; // Import the events route
 
 dotenv.config();
 
 const app = express();
-
-// Set the port from environment variable or default to 3000
 const port = process.env.PORT || 3000;
 
-// Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Failed to connect to MongoDB', err));
 
-// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(morgan('dev'));
@@ -29,24 +27,32 @@ app.use(session({
   saveUninitialized: false,
 }));
 
-// Set view engine and views directory
 app.set('view engine', 'ejs');
-app.set('views', './views'); // Ensure this is the correct path
+app.set('views', './views');
 
-// Routes
 app.get('/', (req, res) => {
   res.render('index', { user: req.session.user || null });
 });
 
-app.use('/auth', authController);
-app.use('/booking', bookingRouter); // Prefix routes with /booking
+app.get('/mybookings', index);
 
-// Handle undefined routes
+app.use('/auth', authController);
+app.use('/booking', bookingRouter);
+app.use('/api', eventsRouter); // Use the events route
+
+bookingRouter.get('/success', (req, res) => {
+  res.render('booking-success');
+});
+
+app.get('/calendar', (req, res) => {
+  res.render('calendar');
+});
+
 app.use((req, res, next) => {
   res.status(404).send('Not Found');
 });
 
+
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
 });
-

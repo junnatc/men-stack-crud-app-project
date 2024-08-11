@@ -1,25 +1,140 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home Page</title>
-  </head>
-  <body>
-    <% if (user) { %>
-      <h1>Decor By OJ</h1>
-      <a href="/auth/log-out">Log Out</a>
-      <a href="/calender">Availability Calender</a>
-      <a href="/booking">Book With Us</a>
-      <a href="/mybookings">My Bookings</a>
-    <% } else { %>
-      <h1>Decor By OJ</h1>
-      <a href="/auth/sign-up">Sign up</a>
-      <a href="/auth/sign-in">Sign in</a>
-      <a href="/calender">Availability Calender</a>
-      <a href="/booking">Book With Us</a>
-    <% } %>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Pacifico&family=VT323&display=swap" rel="stylesheet">
 
-  </body>
+  <style>
+    body {
+      font-family: 'Merriweather', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .navbar {
+      background-color: #7eb3e7;
+      color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+    .navbar .links {
+      display: flex;
+      gap: 20px;
+    }
+    .navbar .links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .navbar .links a:hover {
+      color: #3498db;
+    }
+    .navbar .social-media {
+      display: flex;
+      align-items: center; /* Align icon and text vertically */
+      gap: 15px; /* Spacing between icons and text */
+    }
+    .navbar .social-media a {
+      color: #fff;
+      text-decoration: none; /* Remove underline */
+      font-size: 18px;
+      transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Spacing between icons and text */
+    }
+    .navbar .social-media a:hover {
+      color: #3498db;
+    }
+    .navbar .social-media img {
+      width: 36px; /* Larger size */
+      height: 36px; /* Maintain aspect ratio */
+      background-color: transparent; /* Ensure background is removed */
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      padding: 20px;
+      margin-top: 60px; /* Ensure this margin is enough to clear the fixed navbar */
+      position: relative;
+    }
+    h1 {
+      font-family: "Baskervville SC", serif;
+      color: #275685;
+      margin: 0;
+      font-size: 200px;
+      position: relative;
+      text-align: center;
+      z-index: 1;
+      /* Animation */
+      animation: fadeIn 3s ease-out;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+  <title>Home Page</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="links">
+      <% if (user) { %>
+        <a href="/auth/log-out">Log Out</a>
+        <a href="/calendar">Availability Calendar</a>
+        <a href="/booking">Book With Us</a>
+        <a href="/mybookings">My Bookings</a>
+      <% } else { %>
+        <a href="/auth/sign-up">Sign up</a>
+        <a href="/auth/sign-in">Sign in</a>
+        <a href="/calendar">Availability Calendar</a>
+        <a href="/booking">Book With Us</a>
+      <% } %>
+    </div>
+    <div class="social-media">
+      <a href="https://www.instagram.com/decorbyoj" target="_blank" title="Follow us on Instagram">
+        <img src="https://cdn3.iconfinder.com/data/icons/transparent-on-dark-grey/500/icon-04-512.png" alt="Instagram"><span>@decorbyoj</span>
+      </a>
+      
+    </div>
+  </div>
+  <div class="content">
+    
+    <h1>Decor By OJ</h1>
+    <p><img src="https://see.fontimg.com/api/renderfont4/p7Vxv/eyJyIjoiZnMiLCJoIjo0NSwidyI6MTI1MCwiZnMiOjM2LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/IkZyb20gcGljbmljcyB0byBwcm9wb3NhbHM6IFdoZXJlIGx1eHVyeSBhcnJhbmdlbWVudHMgJiBwcmVjaW91cyBtb21lbnRzIG1lZXQuIg/breeder-script-regular.png" alt=""></p>
+  </div>
+</body>
 </html>
+
