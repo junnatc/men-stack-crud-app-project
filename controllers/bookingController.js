@@ -11,7 +11,6 @@ function convertTo12Hour(time) {
   return `${hours12}:${minutes.toString().padStart(2, '0')} ${period}`;
 }
 
-// Get all bookings for the logged-in user
 const index = async (req, res) => {
   if (!req.session.user) {
     return res.redirect('/auth/sign-in'); // Redirect if not authenticated
@@ -34,12 +33,11 @@ const index = async (req, res) => {
   }
 };
 
-// Render the booking form
 bookingRouter.get('/', (req, res) => {
   if (!req.session.user) {
     return res.redirect('/auth/sign-in'); // Redirect if not authenticated
   }
-  res.render('booking'); // Render the 'booking.ejs' file
+  res.render('booking'); 
 });
 
 // Handle form submission for creating a new booking

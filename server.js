@@ -1,4 +1,3 @@
-// server.js
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -7,7 +6,7 @@ import morgan from 'morgan';
 import session from 'express-session';
 import authController from './controllers/auth.js';
 import { bookingRouter, index } from './controllers/bookingController.js';
-import eventsRouter from './controllers/eventsController.js'; // Import the events route
+import eventsRouter from './controllers/eventsController.js'; 
 
 dotenv.config();
 
@@ -38,7 +37,7 @@ app.get('/mybookings', index);
 
 app.use('/auth', authController);
 app.use('/booking', bookingRouter);
-app.use('/api', eventsRouter); // Use the events route
+app.use('/api', eventsRouter); 
 
 bookingRouter.get('/success', (req, res) => {
   res.render('booking-success');

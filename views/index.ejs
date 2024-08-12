@@ -93,8 +93,8 @@
       margin: 0;
       margin-top: 2%;
       font-size: 200px;
-      position: relative; /* This ensures the z-index works as expected */
-      z-index: 2; /* Higher value to appear above h2 */
+      position: relative; 
+      z-index: 2; 
       animation: fadeIn 3s ease-out;
     
     }
@@ -109,16 +109,16 @@
       }
     }
     h2 {
-      position: absolute; /* Take it out of the normal document flow */
-      z-index: 1; /* Lower value to appear behind h1 */
-      top: 35%; /* Adjust as needed */
-      left: 50%; /* Adjust as needed */
-      transform: translate(-50%, -50%); /* Centering the image */
+      position: absolute; 
+      z-index: 1; 
+      top: 35%; 
+      left: 50%; 
+      transform: translate(-50%, -50%); 
     }
     h2 img {
       max-width: 90%;
       height: auto;
-      display: block; /* Ensures image is treated as a block-level element */
+      display: block;
       opacity: 0.5;
       margin-left: 5%;
     }
