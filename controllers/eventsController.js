@@ -1,4 +1,3 @@
-// controllers/eventsController.js
 import express from 'express';
 import Booking from '../models/booking.js'; // Adjust the path if necessary
 
