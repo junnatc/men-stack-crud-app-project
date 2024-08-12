@@ -6,8 +6,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Pacifico&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Pacifico&family=VT323&display=swap" rel="stylesheet">
 
   <style>
@@ -15,7 +13,7 @@
       font-family: 'Merriweather', serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background: cover, cover;
       color: #333;
       display: flex;
       flex-direction: column;
@@ -33,6 +31,11 @@
       left: 0;
       right: 0;
       z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+    .navbar:hover {
+      background-color: #6ba8d9;
     }
     .navbar .links {
       display: flex;
@@ -42,32 +45,36 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
     .navbar .links a:hover {
-      color: #3498db;
+      color: #82b0cf;
+      transform: scale(1.1);
     }
     .navbar .social-media {
       display: flex;
-      align-items: center; /* Align icon and text vertically */
-      gap: 15px; /* Spacing between icons and text */
+      align-items: center;
+      gap: 15px;
     }
     .navbar .social-media a {
       color: #fff;
-      text-decoration: none; /* Remove underline */
+      text-decoration: none;
       font-size: 18px;
       transition: color 0.3s ease;
       display: flex;
       align-items: center;
-      gap: 10px; /* Spacing between icons and text */
+      gap: 10px;
     }
     .navbar .social-media a:hover {
       color: #3498db;
     }
     .navbar .social-media img {
-      width: 36px; /* Larger size */
-      height: 36px; /* Maintain aspect ratio */
-      background-color: transparent; /* Ensure background is removed */
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s ease;
+    }
+    .navbar .social-media img:hover {
+      transform: rotate(360deg);
     }
     .content {
       display: flex;
@@ -76,19 +83,20 @@
       align-items: center;
       flex: 1;
       padding: 20px;
-      margin-top: 60px; /* Ensure this margin is enough to clear the fixed navbar */
+      margin-top: 80px;
       position: relative;
+      text-align: center;
     }
     h1 {
       font-family: "Baskervville SC", serif;
       color: #275685;
       margin: 0;
+      margin-top: 2%;
       font-size: 200px;
-      position: relative;
-      text-align: center;
-      z-index: 1;
-      /* Animation */
+      position: relative; /* This ensures the z-index works as expected */
+      z-index: 2; /* Higher value to appear above h2 */
       animation: fadeIn 3s ease-out;
+    
     }
     @keyframes fadeIn {
       0% {
@@ -100,10 +108,30 @@
         transform: translateY(0);
       }
     }
+    h2 {
+      position: absolute; /* Take it out of the normal document flow */
+      z-index: 1; /* Lower value to appear behind h1 */
+      top: 35%; /* Adjust as needed */
+      left: 50%; /* Adjust as needed */
+      transform: translate(-50%, -50%); /* Centering the image */
+    }
+    h2 img {
+      max-width: 90%;
+      height: auto;
+      display: block; /* Ensures image is treated as a block-level element */
+      opacity: 0.5;
+      margin-left: 5%;
+    }
     p {
       font-size: 18px;
       color: #555;
-      text-align: center;
+      margin-top: 8%;
+    }
+    p img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 8px;
     }
   </style>
   <title>Home Page</title>
@@ -127,14 +155,14 @@
       <a href="https://www.instagram.com/decorbyoj" target="_blank" title="Follow us on Instagram">
         <img src="https://cdn3.iconfinder.com/data/icons/transparent-on-dark-grey/500/icon-04-512.png" alt="Instagram"><span>@decorbyoj</span>
       </a>
-      
     </div>
   </div>
   <div class="content">
-    
     <h1>Decor By OJ</h1>
-    <p><img src="https://see.fontimg.com/api/renderfont4/p7Vxv/eyJyIjoiZnMiLCJoIjo0NSwidyI6MTI1MCwiZnMiOjM2LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/IkZyb20gcGljbmljcyB0byBwcm9wb3NhbHM6IFdoZXJlIGx1eHVyeSBhcnJhbmdlbWVudHMgJiBwcmVjaW91cyBtb21lbnRzIG1lZXQuIg/breeder-script-regular.png" alt=""></p>
+    <h2><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/25d45014-8cc3-4c98-b02c-5a0cf3a55ddd/dd31oe5-22ea318a-d352-4f49-8c48-ce1887c15e64.png/v1/fit/w_828,h_522/flowers_painted_on_a_transparent_background_by_prussiaart_dd31oe5-414w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODA3IiwicGF0aCI6IlwvZlwvMjVkNDUwMTQtOGNjMy00Yzk4LWIwMmMtNWEwY2YzYTU1ZGRkXC9kZDMxb2U1LTIyZWEzMThhLWQzNTItNGY0OS04YzQ4LWNlMTg4N2MxNWU2NC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.RFqrtsw9OmKBNXJKCkBpaE6JpLnyg5SdjY--UGnaD1o" alt="Decorative Flowers"></h2>
+    <p>
+      <img src="https://see.fontimg.com/api/renderfont4/p7Vxv/eyJyIjoiZnMiLCJoIjo0NSwidyI6MTI1MCwiZnMiOjM2LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/IkZyb20gcGljbmljcyB0byBwcm9wb3NhbHM6IFdoZXJlIGx1eHVyeSBhcnJhbmdlbWVudHMgJiBwcmVjaW91cyBtb21lbnRzIG1lZXQuIg/breeder-script-regular.png" alt="Decor Image">
+    </p>
   </div>
 </body>
 </html>
-

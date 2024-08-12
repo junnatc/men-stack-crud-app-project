@@ -6,98 +6,100 @@
     <title>Book With Us!</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Poppins', sans-serif; /* More modern font */
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
             color: #333;
         }
         h1 {
-            background-color: #7eb3e7;
+            background-color: #5d8aa8; /* Softer blue color */
             color: #fff;
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             margin: 0;
-            font-size: 2.5em;
-            font-family: "Baskervville SC", serif;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 2.8em;
+            font-family: 'Baskervville', serif; /* Elegant serif font */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-bottom: 5px solid #4a6e7c; /* Added border for a stylish touch */
         }
         form {
-            max-width: 800px;
-            margin: 40px auto; /* Increased margin for better spacing */
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
         div {
-            margin-bottom: 20px; /* Increased margin for better spacing between form elements */
+            margin-bottom: 25px;
         }
         label {
             display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #555;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #4a4a4a;
         }
         input[type="text"], input[type="email"], input[type="number"], input[type="date"], input[type="time"], textarea {
-            width: calc(100% - 22px);
-            padding: 12px;
+            width: calc(100% - 24px);
+            padding: 14px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             box-sizing: border-box;
-            font-size: 1em;
-            transition: border-color 0.3s;
+            font-size: 1.1em;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
         input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="date"]:focus, input[type="time"]:focus, textarea:focus {
-            border-color: #3498db;
+            border-color: #5d8aa8;
+            box-shadow: 0 0 8px rgba(93, 138, 168, 0.3);
             outline: none;
         }
         textarea {
-            height: 120px;
+            height: 150px;
             resize: vertical;
         }
         input[type="radio"] {
-            margin-right: 10px;
+            margin-right: 8px;
         }
         button {
-            background-color: #3498db;
+            background-color: #5d8aa8;
             border: none;
             color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+            padding: 15px 30px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.1em;
+            transition: background-color 0.3s, transform 0.3s;
         }
         button:hover {
-            background-color: #2980b9;
+            background-color: #4a6e7c;
             transform: translateY(-2px);
         }
         button:active {
-            background-color: #1f65a6;
+            background-color: #3a5a65;
             transform: translateY(0);
         }
         .back-button {
             text-align: center;
-            margin: 40px 0; /* Added top and bottom margin for better spacing */
+            margin: 40px 0;
         }
         .back-button a {
-            background-color: #3498db;
+            background-color: #5d8aa8;
             color: white;
             padding: 12px 24px;
-            border-radius: 8px;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 1em;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s, transform 0.3s;
             display: inline-block;
         }
         .back-button a:hover {
-            background-color: #2980b9;
+            background-color: #4a6e7c;
             transform: translateY(-2px);
         }
         .back-button a:active {
-            background-color: #1f65a6;
+            background-color: #3a5a65;
             transform: translateY(0);
         }
     </style>
@@ -167,6 +169,7 @@
     </form>
 </body>
 </html>
+
 
 
 

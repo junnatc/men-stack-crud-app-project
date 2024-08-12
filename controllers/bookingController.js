@@ -18,7 +18,7 @@ const index = async (req, res) => {
   }
 
   try {
-    const username = req.session.user.username; // Assuming username is stored in session
+    const username = req.session.user.username; 
     const userBookings = await Booking.find({ username }); // Fetch bookings only for the logged-in user
 
     // Convert times to 12-hour format
