@@ -1,5 +1,6 @@
 import express from 'express';
 import Booking from '../models/booking.js';
+import User from '../models/user.js'; // Import the User model
 
 const bookingRouter = express.Router();
 
@@ -84,10 +85,21 @@ bookingRouter.post('/', async (req, res) => {
       message
     });
 
-    // Save to the database
-    await newBooking.save();
+    // Save the new booking to the database
+    const savedBooking = await newBooking.save();
 
-    res.redirect('/booking/success'); // Redirect to a success page or another route
+    // 1. Grab the new booking ID and update the current user's bookings array
+    const user = await User.findOne({ username });
+    if (user) {
+      user.bookings.push(savedBooking._id); // Add the new booking ID to the user's bookings array
+      await user.save(); // Save the updated user document
+    } else {
+      console.error('User not found');
+      return res.status(404).send('User not found');
+    }
+
+    // 2. Redirect to a success page or another route
+    res.redirect('/booking/success');
   } catch (error) {
     res.status(500).send(`Error: ${error.message}`);
   }
@@ -196,5 +208,3 @@ bookingRouter.delete('/delete/:id', async (req, res) => {
 });
 
 export { index, bookingRouter };
-
-
