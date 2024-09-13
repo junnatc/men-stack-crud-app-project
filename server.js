@@ -8,14 +8,21 @@ import authController from './controllers/auth.js';
 import { bookingRouter, index } from './controllers/bookingController.js';
 import eventsRouter from './controllers/eventsController.js'; 
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+// Get __dirname equivalent
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
+// app.set('view engine', 'ejs');
+// app.set('views', './views');
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
@@ -30,8 +37,6 @@ app.use(session({
   saveUninitialized: false,
 }));
 
-app.set('view engine', 'ejs');
-app.set('views', './views');
 
 app.get('/', (req, res) => {
   res.render('index', { user: req.session.user || null });
