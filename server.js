@@ -7,13 +7,13 @@ import session from 'express-session';
 import authController from './controllers/auth.js';
 import { bookingRouter, index } from './controllers/bookingController.js';
 import eventsRouter from './controllers/eventsController.js'; 
+import path from 'path';
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-const path = require('path');
 app.set('views', path.join(__dirname, 'views'));
 
 
